@@ -41,6 +41,47 @@ st.markdown("""
         text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
+    .topic-header {
+        background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+        color: white;
+        padding: 1rem;
+        border-radius: 12px;
+        margin: 2rem 0 1rem 0;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+    }
+    
+    .important-question {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        padding: 2rem;
+        border-radius: 18px;
+        margin: 2rem 0;
+        border: 3px solid #f59e0b;
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
+    }
+    
+    .important-question h4 {
+        color: #78350f;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 0;
+        direction: rtl;
+        line-height: 1.6;
+    }
+    
+    .important-label {
+        background: #dc2626;
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    
     .question-container {
         background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         padding: 2rem;
@@ -237,36 +278,88 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Programming topics for assessment
-PROGRAMMING_TOPICS = [
-    "משתנים - טיפוס המשתנה (int, double)",
-    "משתנים - הבדלים בין הטיפוסים השונים",
-    "משתנים - הצהרה על משתנים",
-    "משתנים - הבדלים בין הצהרה לאתחול",
-    "כתיבת הוראות קלט",
-    "כתיבת הוראות פלט",
-    "השמת ערכים למשתנים",
-    "המרה בין טיפוסים",
-    "חילוק בין שלמים וקבלת מספר ממשי",
-    "חלוקה בשארית"
+# Assessment questions organized by topics
+TOPICS_AND_QUESTIONS = [
+    {
+        "topic": "משתנים",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: טיפוס המשתנה",
+            "עד כמה אני מרגיש שאני שולט בנושא: שם המשתנה",
+            "עד כמה אני מרגיש שאני שולט בנושא: ערך המשתנה",
+            "עד כמה אני מרגיש שאני שולט בנושא: הבדלים בין טיפוסי המשתנים השונים",
+            "עד כמה אני מרגיש שאני שולט בנושא: הצהרה על משתנים",
+            "עד כמה אני מרגיש שאני שולט בנושא: הבדל בין הצהרה לאתחול משתנים"
+        ]
+    },
+    {
+        "topic": "הוראות קלט",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: קליטת ערכים מהמשתמש לפי התבניות שראינו"
+        ]
+    },
+    {
+        "topic": "הוראות פלט",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: הדפסת הודעות",
+            "עד כמה אני מרגיש שאני שולט בנושא: הדפסת משתנים",
+            "עד כמה אני מרגיש שאני שולט בנושא: הדפסת ביטוי חשבוני",
+            "עד כמה אני מרגיש שאני שולט בנושא: הדפסה משולבת של טקסט ומשתנים (לפי כל אחת מהשיטות שראינו)"
+        ]
+    },
+    {
+        "topic": "השמת ערכים למשתנים",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: השמת ערך קבוע למשתנה",
+            "עד כמה אני מרגיש שאני שולט בנושא: השמת ערך ממשתנה אחר",
+            "עד כמה אני מרגיש שאני שולט בנושא: השמת ערך מהמשתמש",
+            "עד כמה אני מרגיש שאני שולט בנושא: ערך של ביטוי חשבוני"
+        ]
+    },
+    {
+        "topic": "שאלה חשובה",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בכתיבת תכנית שמקבלת קלט מהמשתמש, עושה פעולות ואז מדפיסה פלט למשתמש"
+        ],
+        "important": True
+    },
+    {
+        "topic": "המרה",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: המרה מ-int ל-double",
+            "עד כמה אני מרגיש שאני שולט בנושא: המרה מ-double ל-int"
+        ]
+    },
+    {
+        "topic": "חלוקה בשלמים",
+        "questions": [
+            "עד כמה אני מרגיש שאני שולט בנושא: מה קורה כאשר מחלקים מספר שלם במספר שלם",
+            "עד כמה אני מרגיש שאני שולט בנושא: מה צריך לשנות כדי לקבל חלוקה עם הנקודה העשרונית"
+        ]
+    },
+    {
+        "topic": "חלוקה בשארית",
+        "questions": [
+            "עד כמה אני מרגיש בנוח לקרוא קוד שמשלב חלוקה בשארית",
+            "עד כמה אני מרגיש בנוח לכתוב קוד שמשלב חלוקה בשארית"
+        ]
+    }
 ]
 
-# Additional questions - you can modify these as needed
 ADDITIONAL_QUESTIONS = [
-    "עד כמה אני מרגיש שאני מסוגל לפתור תרגילים בנושאים האלה בעצמי",
-    "עד כמה אני מרגיש שאני יכול להסביר את הנושאים האלה לחברים"
+    "עד כמה אני מרגיש שאני מצליח להחזיר לעצמי את האנרגיה שאני מוציא על הלימודים",
+    "עד כמה אני מרגיש שאני עוזר לאחרים מהכיתה"
 ]
 
 def get_feedback_message(score):
     """Generate short feedback based on the total score"""
     if score >= 90:
-        return "מצוין! אתה שולט בחומר!"
+        return "מצוין! כל הכבוד!"
     elif score >= 80:
-        return "עבודה טובה! המשך להתאמן!"
+        return "עבודה טובה!"
     elif score >= 70:
-        return "יפה, יש התקדמות! המשך לתרגל!"
+        return "יפה, ממשיכים לעבוד!"
     else:
-        return "כדאי לחזור על החומר ולתרגל עוד!"
+        return "עבודה טובה, בוא נשפר עוד קצת!"
 
 def load_manual_scores():
     """Load manually entered scores from session state"""
@@ -330,9 +423,17 @@ def display_statistics_from_manual(scores_dict):
         </div>
         """.format(total_assessments), unsafe_allow_html=True)
 
+def calculate_total_questions():
+    """Calculate total number of questions"""
+    total = 0
+    for topic_group in TOPICS_AND_QUESTIONS:
+        total += len(topic_group["questions"])
+    total += len(ADDITIONAL_QUESTIONS)
+    return total
+
 def main():
     # Header
-    st.markdown('<h1 class="main-header">הערכה פנימית - נושאי תכנות</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">הערכה פנימית - לוח תוצאות</h1>', unsafe_allow_html=True)
     
     # Initialize session state
     if 'current_responses' not in st.session_state:
@@ -386,25 +487,46 @@ def main():
                 responses = {}
                 question_index = 0
                 
-                # Programming topic questions
-                for i, topic in enumerate(PROGRAMMING_TOPICS):
-                    st.markdown(f"""
-                    <div class="question-container">
-                        <h4>עד כמה אני מרגיש בנוח עם הנושא: {topic}?</h4>
-                    </div>
-                    """, unsafe_allow_html=True)
+                # Topic-based questions
+                for topic_group in TOPICS_AND_QUESTIONS:
+                    topic = topic_group["topic"]
+                    questions = topic_group["questions"]
+                    is_important = topic_group.get("important", False)
                     
-                    responses[question_index] = st.slider(
-                        f"הציון שלי עבור {topic}:",
-                        min_value=1,
-                        max_value=10,
-                        value=st.session_state.current_responses.get(question_index, 5),
-                        key=f"q_{question_index}",
-                        label_visibility="collapsed"
-                    )
-                    question_index += 1
+                    # Display topic header (except for important question)
+                    if not is_important:
+                        st.markdown(f'<div class="topic-header">נושא: {topic}</div>', unsafe_allow_html=True)
+                    
+                    # Display questions for this topic
+                    for question in questions:
+                        if is_important:
+                            # Special styling for important question
+                            st.markdown(f"""
+                            <div class="important-question">
+                                <span class="important-label">⚠️ שאלה חשובה</span>
+                                <h4>{question}?</h4>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        else:
+                            st.markdown(f"""
+                            <div class="question-container">
+                                <h4>{question}?</h4>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        
+                        responses[question_index] = st.slider(
+                            f"השאלה מס׳ {question_index + 1}:",
+                            min_value=1,
+                            max_value=10,
+                            value=st.session_state.current_responses.get(question_index, 5),
+                            key=f"q_{question_index}",
+                            label_visibility="collapsed"
+                        )
+                        question_index += 1
                 
-                # Additional questions
+                # Additional questions section
+                st.markdown('<div class="topic-header">שאלות נוספות</div>', unsafe_allow_html=True)
+                
                 for i, question in enumerate(ADDITIONAL_QUESTIONS):
                     st.markdown(f"""
                     <div class="question-container">
@@ -433,7 +555,8 @@ def main():
         else:
             # Show results
             responses = st.session_state.current_responses
-            total_score = round((sum(responses.values()) / ((len(PROGRAMMING_TOPICS) + len(ADDITIONAL_QUESTIONS)) * 10)) * 100, 1)
+            total_questions = calculate_total_questions()
+            total_score = round((sum(responses.values()) / (total_questions * 10)) * 100, 1)
             
             # Display score
             st.markdown(f"""
@@ -450,24 +573,6 @@ def main():
                     <p style="font-size: 1.1rem; margin: 0; text-align: center; color: #2D3748; font-weight: 500;">{feedback}</p>
                 </div>
                 """, unsafe_allow_html=True)
-            
-            # Show areas that need improvement (scores <= 5)
-            weak_areas = []
-            for idx, score in responses.items():
-                if score <= 5:
-                    if idx < len(PROGRAMMING_TOPICS):
-                        weak_areas.append(PROGRAMMING_TOPICS[idx])
-                    else:
-                        weak_areas.append(ADDITIONAL_QUESTIONS[idx - len(PROGRAMMING_TOPICS)])
-            
-            if weak_areas:
-                st.markdown("""
-                <div class="improvement-box">
-                    <p style="font-size: 1.2rem; margin: 0; text-align: center; color: #166534; font-weight: 600;">נושאים שכדאי לחזק:</p>
-                """, unsafe_allow_html=True)
-                for area in weak_areas:
-                    st.markdown(f"<p style='text-align: center; margin: 5px 0;'>• {area}</p>", unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
             
             # Buttons - New assessment and Go to progress
             col1, col2 = st.columns(2)
@@ -562,45 +667,60 @@ def main():
             st.info("הזן ציונים כדי לראות את הגרף והסטטיסטיקות!")
     
     else:  # active_tab == 2
-        # Tab 3: How to Progress Towards the Goal - Updated for Programming
-        st.markdown('<h2 style="text-align: center; color: #553c9a; margin-bottom: 2rem;">איך ניתן להתקדם אל המטרה בתכנות</h2>', unsafe_allow_html=True)
+        # Tab 3: How to Progress Towards the Goal
+        st.markdown('<h2 style="text-align: center; color: #553c9a; margin-bottom: 2rem;">איך ניתן להתקדם אל המטרה</h2>', unsafe_allow_html=True)
         
         # Guidance container
         st.markdown('<div class="guidance-container">', unsafe_allow_html=True)
         
-        # Section 1: Areas for improvement in programming
+        # Section 1: Areas for improvement
         st.markdown("""
         <div class="guidance-section">
-            <div class="guidance-title">🎯 בנושאים שבהם תרצו לשפר את הציון:</div>
+            <div class="guidance-title">🎯 בתחומים שבהם תרצו לשפר את הציון:</div>
             <ul class="guidance-list">
-                <li>תרגלו כתיבת קוד - התחילו מתרגילים פשוטים והתקדמו בהדרגה</li>
-                <li>כתבו תוכניות קטנות משלכם כדי להבין את הנושא לעומק</li>
-                <li>צפו בסרטוני הסבר או קראו דוגמאות קוד באינטרנט</li>
-                <li>בקשו עזרה מהמורה או מחברים שמבינים את הנושא</li>
-                <li>השתמשו ב-AI כדי לקבל הסברים נוספים ותרגילים</li>
-                <li>נסו לפתור בעיות מהחיים האמיתיים עם הכלים שלמדתם</li>
+                <li>אתרו את הנושאים שיש צורך להשלים או לחזור עליהם, וצרו רשימה מסודרת</li>
+                <li>קבעו פגישה פרטנית עם המורה</li>
+                <li>היעזרו ב-AI לתרגול וחיזוק</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
         
-        # Section 2: Areas to maintain in programming
+        # Section 2: Areas to maintain
         st.markdown("""
         <div class="guidance-section" style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); border-right-color: #a78bfa;">
-            <div class="guidance-title" style="color: #5b21b6;">✨ בנושאים שבהם אתם כבר חזקים:</div>
+            <div class="guidance-title" style="color: #5b21b6;">✨ בתחומים שבהם תרצו לשמר את הציון:</div>
             <ul class="guidance-list">
-                <li>המשיכו לתרגל באופן קבוע כדי לא לשכוח</li>
-                <li>נסו לפתור תרגילים מתקדמים יותר</li>
-                <li>עזרו לחברים שמתקשים - זה יחזק את ההבנה שלכם</li>
-                <li>חפשו אתגרי תכנות באינטרנט כדי להמשיך להתפתח</li>
+                <li>קבעו חזרות קבועות על החומר</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
         
-        # Programming specific tips
+        # Reminder about rest
+        st.markdown("""
+        <div class="reminder-box">
+            💫 זכרו גם לנוח ולעשות דברים שמחזירים לכם אנרגיה!
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Action steps
         st.markdown("""
         <div class="guidance-section" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); border-right-color: #fb923c;">
-            <div class="guidance-title" style="color: #9a3412;">💻 טיפים ספציפיים לתכנות:</div>
-            <ul class="guidance-list">
-                <li><strong>משתנים:</strong> תרגלו הגדרת משתנים מסוגים שונים וראו איך הם מתנהגים</li>
-                <li><strong>קלט/פלט:</strong> כתבו תוכניות שמתקשרות עם המשתמש</li>
-                <li><strong
+            <div class="guidance-title" style="color: #9a3412;">📋 לאחר שזיהיתם מה צריך לעשות:</div>
+            <p style="font-size: 1.2rem; margin-right: 1.5rem; color: #7c2d12; font-weight: 500;">
+                קבעו יעדים יומיים ושבועיים
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Signature
+        st.markdown("""
+        <div class="signature-box">
+            סומך עליכם! 💪<br>
+            דניאל
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown('</div>', unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    main()
