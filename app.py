@@ -681,6 +681,7 @@ def main():
                 <li>אתרו את הנושאים שיש צורך להשלים או לחזור עליהם, וצרו רשימה מסודרת</li>
                 <li>קבעו פגישה פרטנית עם המורה</li>
                 <li>היעזרו ב-AI לתרגול וחיזוק</li>
+                <li><strong style="color: #dc2626; font-size: 1.2rem;">חשוב מאוד! לתרגל לתרגל לתרגל - כתבו תכניות וקוד בעצמכם! זאת הדרך היעילה ביותר להבין כמה שיותר חומר בכמה שפחות זמן</strong></li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
@@ -691,6 +692,7 @@ def main():
             <div class="guidance-title" style="color: #5b21b6;">✨ בתחומים שבהם תרצו לשמר את הציון:</div>
             <ul class="guidance-list">
                 <li>קבעו חזרות קבועות על החומר</li>
+                <li><strong style="color: #7c3aed; font-size: 1.2rem;">חשוב מאוד! לתרגל לתרגל לתרגל - כתבו תכניות וקוד בעצמכם! זאת הדרך היעילה ביותר להבין כמה שיותר חומר בכמה שפחות זמן</strong></li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
