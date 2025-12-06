@@ -5,7 +5,7 @@ import json
 # Configure page
 st.set_page_config(
     page_title="הערכה פנימית - לוח תוצאות",
-    page_icon="🌴",
+    page_icon="🏰",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -20,46 +20,46 @@ st.markdown("""
     }
     
     .main .block-container {
-        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 30%, #6ee7b7 60%, #34d399 100%);
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 30%, #a5d6a7 60%, #81c784 100%);
         min-height: 100vh;
     }
     
     .stApp {
-        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 25%, #a7f3d0 50%, #99f6e4 75%, #5eead4 100%);
+        background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 25%, #c5e1a5 50%, #aed581 75%, #9ccc65 100%);
     }
     
     .main-header {
         font-size: 2.8rem;
         font-weight: 700;
         text-align: center;
-        color: #064e3b;
+        color: #33691e;
         margin-bottom: 2.5rem;
-        background: linear-gradient(135deg, #059669 0%, #0891b2 50%, #0e7490 100%);
+        background: linear-gradient(135deg, #558b2f 0%, #689f38 50%, #7cb342 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: 0 2px 4px rgba(6,78,59,0.2);
+        text-shadow: 0 2px 4px rgba(51,105,30,0.2);
     }
     
     .topic-header {
-        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
-        color: white;
+        background: linear-gradient(135deg, #6d4c41 0%, #8d6e63 50%, #a1887f 100%);
+        color: #fafafa;
         padding: 1rem;
         border-radius: 12px;
         margin: 2rem 0 1rem 0;
         text-align: center;
         font-size: 1.4rem;
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.4);
+        box-shadow: 0 4px 12px rgba(109, 76, 65, 0.4);
     }
     
     .question-container {
-        background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbe7 100%);
         padding: 2rem;
         border-radius: 18px;
         margin: 1.8rem 0;
-        border-right: 6px solid #14b8a6;
-        box-shadow: 0 6px 20px rgba(20, 184, 166, 0.2);
+        border-right: 6px solid #7cb342;
+        box-shadow: 0 6px 20px rgba(124, 179, 66, 0.25);
         direction: rtl;
         text-align: right;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -67,11 +67,11 @@ st.markdown("""
     
     .question-container:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+        box-shadow: 0 8px 25px rgba(124, 179, 66, 0.35);
     }
     
     .question-container h4 {
-        color: #064e3b;
+        color: #33691e;
         font-weight: 500;
         font-size: 1.3rem;
         margin: 0;
@@ -84,43 +84,43 @@ st.markdown("""
         font-weight: bold;
         text-align: center;
         padding: 3rem;
-        background: linear-gradient(135deg, #059669 0%, #0891b2 50%, #06b6d4 100%);
+        background: linear-gradient(135deg, #558b2f 0%, #689f38 50%, #7cb342 100%);
         color: white;
         border-radius: 25px;
         margin: 2.5rem 0;
-        box-shadow: 0 10px 30px rgba(5, 150, 105, 0.4);
+        box-shadow: 0 10px 30px rgba(85, 139, 47, 0.4);
         direction: ltr;
     }
     
     .feedback-box {
-        background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+        background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
         padding: 2.2rem;
         border-radius: 18px;
         margin: 1.8rem 0;
-        border: 2px solid #2dd4bf;
-        box-shadow: 0 6px 20px rgba(45, 212, 191, 0.2);
+        border: 2px solid #fbc02d;
+        box-shadow: 0 6px 20px rgba(251, 192, 45, 0.25);
         direction: rtl;
         text-align: center;
     }
     
     .improvement-box {
-        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        background: linear-gradient(135deg, #dcedc8 0%, #c5e1a5 100%);
         padding: 2.2rem;
         border-radius: 18px;
         margin: 1.8rem 0;
-        border: 2px solid #34d399;
-        box-shadow: 0 6px 20px rgba(52, 211, 153, 0.2);
+        border: 2px solid #8bc34a;
+        box-shadow: 0 6px 20px rgba(139, 195, 74, 0.25);
         direction: rtl;
         text-align: center;
     }
     
     .progress-stats {
-        background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
         padding: 2rem;
         border-radius: 18px;
-        box-shadow: 0 6px 20px rgba(5, 150, 105, 0.15);
+        box-shadow: 0 6px 20px rgba(85, 139, 47, 0.2);
         margin: 1.2rem 0;
-        border-top: 4px solid #10b981;
+        border-top: 4px solid #689f38;
         text-align: center;
         transition: transform 0.2s ease;
     }
@@ -130,61 +130,61 @@ st.markdown("""
     }
     
     .chart-container {
-        background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbe7 100%);
         padding: 2rem;
         border-radius: 18px;
         margin: 2rem 0;
-        box-shadow: 0 6px 20px rgba(20, 184, 166, 0.15);
-        border: 1px solid #99f6e4;
+        box-shadow: 0 6px 20px rgba(124, 179, 66, 0.2);
+        border: 1px solid #c5e1a5;
     }
     
     .chart-title {
         text-align: center;
         font-size: 1.5rem;
         font-weight: 600;
-        color: #064e3b;
+        color: #33691e;
         margin-bottom: 1.5rem;
     }
     
     .input-container {
-        background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbe7 100%);
         padding: 2rem;
         border-radius: 18px;
         margin: 1.8rem 0;
-        border: 2px solid #99f6e4;
-        box-shadow: 0 6px 20px rgba(20, 184, 166, 0.1);
+        border: 2px solid #c5e1a5;
+        box-shadow: 0 6px 20px rgba(124, 179, 66, 0.15);
     }
     
     .guidance-container {
-        background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
         padding: 2.5rem;
         border-radius: 20px;
         margin: 2rem 0;
-        box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+        box-shadow: 0 8px 25px rgba(85, 139, 47, 0.2);
         direction: rtl;
         text-align: right;
-        border-right: 5px solid #059669;
+        border-right: 5px solid #558b2f;
     }
     
     .guidance-section {
         margin: 2rem 0;
         padding: 1.5rem;
-        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        background: linear-gradient(135deg, #dcedc8 0%, #c5e1a5 100%);
         border-radius: 15px;
-        border-right: 4px solid #10b981;
+        border-right: 4px solid #689f38;
     }
     
     .guidance-title {
         font-size: 1.4rem;
         font-weight: 600;
-        color: #065f46;
+        color: #33691e;
         margin-bottom: 1rem;
     }
     
     .guidance-list {
         margin-right: 1.5rem;
         line-height: 2;
-        color: #064e3b;
+        color: #33691e;
     }
     
     .guidance-list li {
@@ -193,40 +193,40 @@ st.markdown("""
     }
     
     .reminder-box {
-        background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+        background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
         padding: 1.8rem;
         border-radius: 15px;
         margin: 2rem 0;
-        border: 2px solid #0891b2;
+        border: 2px solid #fbc02d;
         text-align: center;
         direction: rtl;
         font-size: 1.2rem;
-        color: #164e63;
+        color: #f57f17;
         font-weight: 500;
     }
     
     .warning-box {
-        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        background: linear-gradient(135deg, #ffecb3 0%, #ffe082 100%);
         padding: 1.8rem;
         border-radius: 15px;
         margin: 2rem 0;
-        border: 2px solid #f59e0b;
+        border: 2px solid #ffa726;
         text-align: center;
         direction: rtl;
         font-size: 1.15rem;
-        color: #78350f;
+        color: #e65100;
         font-weight: 500;
-        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+        box-shadow: 0 4px 15px rgba(255, 167, 38, 0.25);
     }
     
     .signature-box {
         text-align: center;
         margin-top: 3rem;
         padding: 1.5rem;
-        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        background: linear-gradient(135deg, #dcedc8 0%, #c5e1a5 100%);
         border-radius: 15px;
         font-size: 1.3rem;
-        color: #065f46;
+        color: #33691e;
         font-weight: 600;
     }
     
@@ -240,14 +240,14 @@ st.markdown("""
     
     .stTabs [data-baseweb="tab-list"] {
         gap: 2rem;
-        background: rgba(209, 250, 229, 0.3);
+        background: rgba(197, 225, 165, 0.3);
         padding: 0.5rem;
         border-radius: 15px;
         justify-content: center;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbe7 100%);
         border-radius: 12px;
         padding: 1rem 2rem;
         border: 2px solid transparent;
@@ -255,10 +255,10 @@ st.markdown("""
     }
     
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        background: linear-gradient(135deg, #558b2f 0%, #689f38 100%);
         color: white;
-        border-color: #0891b2;
-        box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
+        border-color: #558b2f;
+        box-shadow: 0 4px 15px rgba(85, 139, 47, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -329,13 +329,13 @@ ADDITIONAL_QUESTIONS = [
 def get_feedback_message(score):
     """Generate short feedback based on the total score"""
     if score >= 90:
-        return "מצוין! כל הכבוד! 🌊"
+        return "מצוין! כל הכבוד! 🏆"
     elif score >= 80:
-        return "עבודה טובה! 🌴"
+        return "עבודה טובה! 🌲"
     elif score >= 70:
-        return "יפה, ממשיכים לעבוד! 🐠"
+        return "יפה, ממשיכים לעבוד! 🗡️"
     else:
-        return "עבודה טובה, בוא נשפר עוד קצת! 🦜"
+        return "עבודה טובה, בוא נשפר עוד קצת! 🛡️"
 
 def load_manual_scores():
     """Load manually entered scores from session state"""
@@ -376,8 +376,8 @@ def display_statistics_from_manual(scores_dict):
         current_score = valid_scores[-1] if valid_scores else 0
         st.markdown("""
         <div class="progress-stats">
-            <h3 style="color: #064e3b; margin: 0;">הציון האחרון שלי</h3>
-            <h2 style="color: #0891b2; margin: 5px 0;">{}/100</h2>
+            <h3 style="color: #33691e; margin: 0;">הציון האחרון שלי</h3>
+            <h2 style="color: #558b2f; margin: 5px 0;">{}/100</h2>
         </div>
         """.format(current_score), unsafe_allow_html=True)
     
@@ -385,8 +385,8 @@ def display_statistics_from_manual(scores_dict):
         best_score = max(valid_scores) if valid_scores else 0
         st.markdown("""
         <div class="progress-stats">
-            <h3 style="color: #064e3b; margin: 0;">הציון הכי טוב שלי</h3>
-            <h2 style="color: #10b981; margin: 5px 0;">{}/100</h2>
+            <h3 style="color: #33691e; margin: 0;">הציון הכי טוב שלי</h3>
+            <h2 style="color: #689f38; margin: 5px 0;">{}/100</h2>
         </div>
         """.format(best_score), unsafe_allow_html=True)
     
@@ -394,8 +394,8 @@ def display_statistics_from_manual(scores_dict):
         total_assessments = len(valid_scores)
         st.markdown("""
         <div class="progress-stats">
-            <h3 style="color: #064e3b; margin: 0;">כמה הערכות הזנתי</h3>
-            <h2 style="color: #059669; margin: 5px 0;">{}</h2>
+            <h3 style="color: #33691e; margin: 0;">כמה הערכות הזנתי</h3>
+            <h2 style="color: #7cb342; margin: 5px 0;">{}</h2>
         </div>
         """.format(total_assessments), unsafe_allow_html=True)
 
@@ -409,7 +409,7 @@ def calculate_total_questions():
 
 def main():
     # Header
-    st.markdown('<h1 class="main-header">🌴 הערכה פנימית - לוח תוצאות 🌊</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🌲 הערכה פנימית - לוח תוצאות 🏰</h1>', unsafe_allow_html=True)
     
     # Initialize session state
     if 'current_responses' not in st.session_state:
@@ -430,14 +430,14 @@ def main():
     # Create tab selection buttons
     col1, col2, col3 = st.columns(3)
     with col1:
-        if st.button("🌴 הערכה חדשה", 
+        if st.button("🌲 הערכה חדשה", 
                     type="primary" if st.session_state.active_tab == 0 else "secondary",
                     use_container_width=True,
                     key="tab_assessment"):
             st.session_state.active_tab = 0
     
     with col2:
-        if st.button("📊 להסתכל על ההתקדמות שלי", 
+        if st.button("📜 להסתכל על ההתקדמות שלי", 
                     type="primary" if st.session_state.active_tab == 1 else "secondary",
                     use_container_width=True,
                     key="tab_progress"):
@@ -456,7 +456,7 @@ def main():
     if st.session_state.active_tab == 0:
         # Tab 1: New Assessment
         if not st.session_state.show_results:
-            st.markdown("<div style='text-align: center; margin-bottom: 2rem;'><p style='font-size: 1.1rem; color: #064e3b;'>תן לכל נושא ציון מ-1 (בכלל לא בטוח) עד 10 (מאוד בטוח) - לפי איך שאתה מרגיש ממש עכשיו.</p></div>", unsafe_allow_html=True)
+            st.markdown("<div style='text-align: center; margin-bottom: 2rem;'><p style='font-size: 1.1rem; color: #33691e;'>תן לכל נושא ציון מ-1 (בכלל לא בטוח) עד 10 (מאוד בטוח) - לפי איך שאתה מרגיש ממש עכשיו.</p></div>", unsafe_allow_html=True)
             
             # Important warning box
             st.markdown("""
@@ -473,13 +473,9 @@ def main():
                 
                 # Topic-based questions
                 for topic_group in TOPICS_AND_QUESTIONS:
-                    topic = topic_group["topic"]
                     questions = topic_group["questions"]
                     
-                    # Display topic header
-                    st.markdown(f'<div class="topic-header">נושא: {topic}</div>', unsafe_allow_html=True)
-                    
-                    # Display questions for this topic
+                    # Display questions without topic header
                     for question in questions:
                         st.markdown(f"""
                         <div class="question-container">
@@ -518,7 +514,7 @@ def main():
                     question_index += 1
                 
                 # Submit button
-                submitted = st.form_submit_button("🌊 לשלוח את ההערכה", type="primary", use_container_width=True)
+                submitted = st.form_submit_button("🏰 לשלוח את ההערכה", type="primary", use_container_width=True)
                 
                 if submitted:
                     st.session_state.current_responses = responses
@@ -534,7 +530,7 @@ def main():
             # Display score
             st.markdown(f"""
             <div class="score-display">
-                🌴 הציון הכללי שלי: {total_score}/100 🌊
+                🏆 הציון הכללי שלי: {total_score}/100 🏆
             </div>
             """, unsafe_allow_html=True)
             
@@ -543,7 +539,7 @@ def main():
             if feedback:
                 st.markdown(f"""
                 <div class="feedback-box">
-                    <p style="font-size: 1.1rem; margin: 0; text-align: center; color: #064e3b; font-weight: 500;">{feedback}</p>
+                    <p style="font-size: 1.1rem; margin: 0; text-align: center; color: #33691e; font-weight: 500;">{feedback}</p>
                 </div>
                 """, unsafe_allow_html=True)
             
@@ -557,7 +553,7 @@ def main():
                     st.rerun()
             
             with col2:
-                if st.button("📊 לעבור לדף ההתקדמות", type="primary", use_container_width=True, key="goto_progress"):
+                if st.button("📜 לעבור לדף ההתקדמות", type="primary", use_container_width=True, key="goto_progress"):
                     st.session_state.current_responses = {}
                     st.session_state.show_results = False
                     st.session_state.active_tab = 1  # Switch to progress tab
@@ -565,8 +561,8 @@ def main():
     
     elif st.session_state.active_tab == 1:
         # Tab 2: Progress Tracking
-        st.markdown("<h3 style='text-align: center; color: #064e3b;'>הזן את הציונים שלך</h3>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center; color: #065f46; margin-bottom: 2rem;'>הזן ציונים מ-0 עד 100 עבור כל הערכה. הציונים יישמרו אוטומטית.</p>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: #33691e;'>הזן את הציונים שלך</h3>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; color: #558b2f; margin-bottom: 2rem;'>הזן ציונים מ-0 עד 100 עבור כל הערכה. הציונים יישמרו אוטומטית.</p>", unsafe_allow_html=True)
         
         # Load existing scores
         manual_scores = load_manual_scores()
@@ -610,7 +606,7 @@ def main():
         
         if valid_scores_dict:
             st.markdown("---")
-            st.markdown("<h3 style='text-align: center; color: #064e3b;'>🌊 איך אני מתקדם 🌴</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: #33691e;'>🌲 איך אני מתקדם 🏰</h3>", unsafe_allow_html=True)
             
             # Progress chart - FIRST
             chart_data = create_simple_progress_chart(updated_scores)
@@ -637,11 +633,11 @@ def main():
             if table_data:
                 st.dataframe(table_data, use_container_width=True, hide_index=True)
         else:
-            st.info("הזן ציונים כדי לראות את הגרף והסטטיסטיקות! 🌴")
+            st.info("הזן ציונים כדי לראות את הגרף והסטטיסטיקות! 🌲")
     
     else:  # active_tab == 2
         # Tab 3: How to Progress Towards the Goal
-        st.markdown('<h2 style="text-align: center; color: #065f46; margin-bottom: 2rem;">🎯 איך ניתן להתקדם אל המטרה 🌊</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="text-align: center; color: #33691e; margin-bottom: 2rem;">🎯 איך ניתן להתקדם אל המטרה 🌲</h2>', unsafe_allow_html=True)
         
         # Guidance container
         st.markdown('<div class="guidance-container">', unsafe_allow_html=True)
@@ -673,7 +669,7 @@ def main():
         # Reminder about rest
         st.markdown("""
         <div class="reminder-box">
-            💫 זכרו גם לנוח ולעשות דברים שמחזירים לכם אנרגיה! 🌴
+            💫 זכרו גם לנוח ולעשות דברים שמחזירים לכם אנרגיה! 🌲
         </div>
         """, unsafe_allow_html=True)
         
@@ -690,7 +686,7 @@ def main():
         # Signature
         st.markdown("""
         <div class="signature-box">
-            סומך עליכם! 💪🌊<br>
+            סומך עליכם! 💪🏰<br>
             דניאל
         </div>
         """, unsafe_allow_html=True)
